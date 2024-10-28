@@ -62,7 +62,7 @@ nav ul li a {
     background-color: #0d0b0b;
 }
 .gym {
-    background-image: url(/images/gym.jpg);
+    background-image: url(/images/gym.png);
     
 }
 .gym > div {
@@ -79,7 +79,43 @@ nav ul li a {
     font-size: x-large;
 }
 .code {
-    background-image: url(/images/code.jpg);
+    background-image: url(/images/code.png);
+    text-align: center;
+    opacity: 0.1;
+}
+.code > div {
+    text-align: center;
+    color: white;
+    letter-spacing: 4px;
+    font-size: x-large;
+    opacity: 1;
+    margin-left: 200px;
+}
+
+#about {
+    flex-shrink: 0;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    margin-top: 500px;
+    opacity: 0.01;
+    
+}
+
+.omne { 
+    text-align: center;
+    color: white;
+    font-size: x-large;
+    opacity: 1;
+    width: 100%;
+    padding-right: 200px;
+    padding-left: 200px;
+}
+.omne > h1{
+    text-align: center;
+    color: white;
+    opacity: 1;
+    width: 100%;
 }
 
 footer {
@@ -89,3 +125,6 @@ footer {
     color: #EBD3F8;
     padding: 1rem 0;
 }
+
+
+

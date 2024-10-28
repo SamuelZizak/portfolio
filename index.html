@@ -27,7 +27,18 @@
                 <h2>Amatérsky Muay Thai fighter</h2>
             </div>
         </div>
-        <div class="code"></div>
+        <div class="code">
+            <div>
+                <h1>Zcinajuci Webdeveloper</h1>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="omne">
+            <h1>O mne</h1>
+            <p>Volám sa Samuel Žižák a som nadšenec do boxu a začínajúci webový vývojár. Boxu sa venujem už tri roky a počas tejto doby som si vybudoval skvelú fyzičku, disciplínu a vytrvalosť. Okrem športových ambícií sa tiež zaujímam o technológie a s nadšením sa učím základy webového vývoja.</p>
+        </div>
     </section>
     <footer>
         <h2>Footer</h2>
@@ -40,12 +51,11 @@
         const contents = gsap.utils.toArray("#horizontal div");
 
         gsap.to(contents, {
-            xPercent: -100 * (contents.length - 2),
+            xPercent: -100,
             scrollTrigger: {
                 trigger: "#horizontal",
                 pin: true,
                 scrub: 1,
-                markers: true,
                 start: "top top"
             }
      
@@ -60,7 +70,6 @@
         ScrollTrigger.create({
             start: "top top",
             end: "max",
-            markers: true,
             onUpdate: (self) => {
                 self.direction === -1 ? showAnim.play() : showAnim.reverse()
             }
@@ -69,15 +78,8 @@
         ScrollTrigger.create({
             trigger: ".gym",
             start: "top top",
-            end: "65% top",
+            end: "55% top",
             scrub: 1,
-            markers: true,
-            onEnter: () => {
-                gsap.to(".gym", { opacity: 0.5, duration: 0.5 });
-            },
-            // onEnter:() => {
-            //     gsap.to(".gym > div", { opacity: 1, duration: 0.5 });
-            // },
             onLeave: () => {
                 gsap.to(".gym", { opacity: 0, duration: 0.5 });
             },
@@ -89,6 +91,51 @@
                 gsap.to(".gym", { opacity: 1, duration: 0.5 });
             }
         });
+        ScrollTrigger.create({
+            trigger: ".code",
+            start: "30% top",
+            end: "+=1500 bottom",
+            scrub: 1,
+            onLeave: () => {
+                gsap.to(".code", { opacity: 0, duration: 1 });
+            },
+            onEnter:()=>{
+                gsap.to(".code", { opacity: 1, duration: 1 });
+            },
+            onEnterBack: () => {
+                gsap.to(".code", { opacity: 1, duration: 0.5 });
+            },
+
+            onLeaveBack: () => {
+                gsap.to(".code", { opacity: 0, duration: 0.5 });
+            }
+        });
+
+        gsap.to('#about',{
+        duration: 2,
+        y:-600,
+        scrollTrigger: {
+            trigger: '.green-box',
+            markers:true,
+            scrub:1,
+            pin:true,
+            start:"+=1700 center",
+            end:"bottom center",
+            onEnter:()=>{
+                gsap.to("#about", { opacity: 1, duration: 1 });
+            },
+            onLeave: () => {
+                gsap.to("#about", { opacity: 1, duration: 1 });
+            },
+            onEnterBack: () => {
+                gsap.to(".#about", { opacity: 1, duration: 0.5 });
+            },
+
+            onLeaveBack: () => {
+                gsap.to("#about", { opacity: 0, duration: 0.5 });
+            }
+        }
+    });
     </script>
     </script>
 </body>
